@@ -55,10 +55,21 @@ export default defineComponent({
       store
     };
   },
+  data() {
+    return {
+      tarefaSelecionada: null as ITarefa | null
+    }
+  },
   methods: {
     salvarTarefa(tarefa: ITarefa): void {
       this.store.dispatch(CADASTRAR_TAREFA, tarefa);
     },
+    selecionarTarefa(tarefa: ITarefa): void {
+      this.tarefaSelecionada = tarefa
+    },
+    fecharModal(): void {
+      this.tarefaSelecionada = null
+    }
   }
 });
 </script>
