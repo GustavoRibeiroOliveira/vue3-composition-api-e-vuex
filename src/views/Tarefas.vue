@@ -35,7 +35,7 @@ import Formulario from '../components/Formulario.vue';
 import Tarefa from '../components/Tarefa.vue';
 import Box from '../components/Box.vue';
 import { useStore } from '@/store';
-import { CADASTRAR_TAREFA, OBTER_PROJETOS, OBTER_TAREFAS } from '@/store/tipo-acoes';
+import { ALTERAR_TAREFA, CADASTRAR_TAREFA, OBTER_PROJETOS, OBTER_TAREFAS } from '@/store/tipo-acoes';
 import ITarefa from '@/interfaces/ITarefa';
 
 export default defineComponent({
@@ -69,6 +69,9 @@ export default defineComponent({
     },
     fecharModal(): void {
       this.tarefaSelecionada = null
+    },
+    alterarTarefa(): void {
+      this.store.dispatch(ALTERAR_TAREFA, this.tarefaSelecionada).then(() => this.fecharModal())
     }
   }
 });

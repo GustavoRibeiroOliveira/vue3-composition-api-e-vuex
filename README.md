@@ -48,3 +48,9 @@ npm i -g http-server
 ``` shell
 http-server
 ```
+
+### Comando para rodar o json-server
+
+``` shell
+json-server --watch db.json
+```
