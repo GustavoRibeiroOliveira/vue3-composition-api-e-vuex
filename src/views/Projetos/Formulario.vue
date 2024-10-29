@@ -31,7 +31,7 @@ export default defineComponent({
     // mixins: [notificacaoMixin],
     mounted() {
         if(this.id) {
-            const projeto = this.store.state.projetos.find((proj: { id: string | undefined; }) => proj.id == this.id)
+            const projeto = this.store.state.projeto.projetos.find((proj: { id: string | undefined; }) => proj.id == this.id)
             this.nomeDoProjeto = projeto?.nome || ''
         }
     },
